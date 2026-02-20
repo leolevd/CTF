@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .route {
+            background-color: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid #0f3460;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .route:hover {
+            border-color: #e94560;
+            transform: translateX(4px);
+        }
+
+        .route-url {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 1.1rem;
+            color: #e94560;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .route-desc {
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+
+        .route-params {
+            font-size: 0.85rem;
+            color: #666;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        .role-user { background: #9b59b6; color: #fff; }
+        .role-manager { background: #27ae60; color: #fff; }
+        .role-admin { background: #e74c3c; color: #fff; }
+        .role-topadmin { background: #f39c12; color: #fff; }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>API Documentation</h1>
+
+        <div class="route">
+            <div class="route-url">/</div>
+            <div class="route-desc">Documentation home</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/email</div>
+            <div class="route-desc">Get email for a user</div>
+            <div class="route-params">Params: username, password</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/signup</div>
+            <div class="route-desc">Sign up new user</div>
+            <div class="route-params">Params: username, password, key</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/manager/delete</div>
+            <div class="route-desc">Delete user account <span class="role-badge role-manager">manager</span></div>
+            <div class="route-params">Params: id, username, password</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/manager/getid</div>
+            <div class="route-desc">Get user ID <span class="role-badge role-manager">manager</span></div>
+            <div class="route-params">Params: usernameofuser, username, password</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/manager/getkey</div>
+            <div class="route-desc">Get signup key <span class="role-badge role-manager">manager</span></div>
+            <div class="route-params">Params: username, password</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/admin/promote</div>
+            <div class="route-desc">Promote user to manager</div>
+            <div class="route-params">Params: usernameofuser, username, password</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/admin/delete</div>
+            <div class="route-desc">Delete user or manager <span class="role-badge role-admin">admin</span></div>
+            <div class="route-params">Params: id, username, password</div>
+        </div>
+
+        <div class="route">
+            <div class="route-url">/topadmin/secret</div>
+            <div class="route-desc">Secret flag <span class="role-badge role-topadmin">top admin</span></div>
+            <div class="route-params">Params: username, password</div>
+        </div>
+
+        <!-- === PREDICTABLE HIDDEN ENDPOINTS === -->
+        <div class="route" style="display: none;">
+            <div class="route-url">/manager/upgrade</div>
+            <div class="route-desc">Upgrade manager to admin <span class="role-badge role-manager">manager</span></div>
+            <div class="route-params">Params: username, password, seed</div>
+        </div>
+
+        <div class="route" style="display: none;">
+            <div class="route-url">/admin/transfer</div>
+            <div class="route-desc">Transfer admin to top_admin <span class="role-badge role-admin">admin</span></div>
+            <div class="route-params">Params: username, password, key</div>
+        </div>
+
+        <div class="route" style="display: none;">
+            <div class="route-url">/key</div>
+            <div class="route-desc">Get transfer key <span class="role-badge role-topadmin">top admin</span></div>
+            <div class="route-params">Params: username, password</div>
+        </div>
+    </div>
+
+    <footer>API Documentation by George</footer>
+</body>
+</html>
