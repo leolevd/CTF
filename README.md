@@ -47,7 +47,7 @@ This application contains **deliberate vulnerabilities** for educational purpose
 
 ## Objective
 
-The goal is to escalate your privileges from a regular user to `top_admin` and retrieve the secret flag from `/topadmin/secret`.
+The goal is to escalate your privileges from an outsider to `top_admin` and retrieve the secret flag from `/topadmin/secret`.
 
 
 ## Security Notice
