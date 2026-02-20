@@ -25,15 +25,13 @@ CTF/
 
 ## Installation
 
-```
-bash
+```bash
 pip install fastapi uvicorn
 ```
 
 ## Running the Server
 
-```
-bash
+```bash
 python server.py
 ```
 
