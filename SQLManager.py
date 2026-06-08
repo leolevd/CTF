@@ -1,5 +1,5 @@
 import sqlite3
-from randomGOODpasswordGeNeRaToR import generate_password as makepass
+from passwords import generate_password as makepass
 
 DB_PATH = "data.db"
 

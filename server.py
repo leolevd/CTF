@@ -1,9 +1,9 @@
 import fastapi
 import fastapi.responses
 import SQLManager
-from sqlWatcher import watch
 import uvicorn
 import base64
+
 
 flag_got = False
 app = fastapi.FastAPI(docs_url=None, redoc_url=None)
@@ -110,19 +110,19 @@ def get_key(username: str, password: str):
 
 @app.get("/archive")
 def archive():
-    raise fastapi.HTTPException(status_code=451, detail="Unavailable For Legal Reasons.") # To get the archive, you need to go to /archive/home, but this endpoint is hidden and not listed in the docs, so you need to guess it or find it in the source code. This is a hint for the hidden endpoint.
+    raise fastapi.HTTPException(status_code=451, detail="Unavailable For Legal Reasons.") # To get the archive, you need to go to /archive/home, but this endpoint is hidden and not listed in the docs, so you need to guess it
 @app.get("/archive/{}")
 def archive_id(anything):
     if anything == "home":
-        return fastapi.responses.FileResponse("archive.zip", status_code=200, headers={"Message": "Great job finding the sourse code!"})
+        return fastapi.responses.FileResponse("archive.zip", status_code=200, headers={"Message": "Great job finding the archive!"})
     raise fastapi.HTTPException(status_code=404, detail="This archive doesn't exist, go to: /archive/home")
 
 @app.get("/easteregg")
 def easteregg():
-    raise fastapi.HTTPException(status_code=403, detail="Wanna the easter egg? Well, I'm not going to give it to you that easily! Go find it somewhere.")
+    raise fastapi.HTTPException(status_code=403, detail="Wanna the easter egg? Well, I'm not going to give it to you. Go look for it somewhere.")
 @app.get("/somewhere") # Hahaha, the message said - somewhere, but no one would think of it that way...
 def somewhere():
-    return {"message": "Congratulations! You found the easter egg! Here's your reward: {}. Oh no! It's just hex! Try doing something to it....".format(base64.b64encode(b"CTBYTE{EASTER_EGG_FOUND!!!}").hex())} # Easter Egg
+    return {"message": "Congratulations! You found the easter egg! Here's your reward: {}. Oh no! It's just hex! Try doing something to it....".format(base64.b64encode(b"EASTEREGG{SOMEWHERE}").hex())} # Easter Egg
 
 uvicorn.run(
     app=app,

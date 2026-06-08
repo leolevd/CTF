@@ -6,6 +6,11 @@ A deliberately vulnerable web application for learning and practicing security s
 
 ```
 CTF/
+├── The archive/
+│   ├── dontopenmepls.zip           # An archive with a password, contains easter.egg
+│   ├── easter.egg                  # Real easter egg from the archive quest
+│   └── easteregg.txt               # A fake egg file with a joke
+├── archive.zip                     # An archive with an easter egg
 ├── server.py                       # FastAPI server with endpoints
 ├── SQLManager.py                   # Database manager (vulnerable & safe functions)
 ├── sqlWatcher.py                   # Database viewer utility
