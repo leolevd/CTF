@@ -111,11 +111,18 @@ def get_key(username: str, password: str):
 @app.get("/archive")
 def archive():
     raise fastapi.HTTPException(status_code=451, detail="Unavailable For Legal Reasons.") # To get the archive, you need to go to /archive/home, but this endpoint is hidden and not listed in the docs, so you need to guess it
-@app.get("/archive/{}")
-def archive_id(anything):
+@app.get("/archive/{anything}")
+def archive_id(anything: str):
     if anything == "home":
-        return fastapi.responses.FileResponse("archive.zip", status_code=200, headers={"Message": "Great job finding the archive!"})
-    raise fastapi.HTTPException(status_code=404, detail="This archive doesn't exist, go to: /archive/home")
+        return fastapi.responses.FileResponse("HTML/Archive_home.html", status_code=200, headers={"Message": "Great job finding the archive!"})
+    return fastapi.responses.JSONResponse({"detail": "Not found. Go to /archive/home"}, status_code=404)
+@app.get("/Archives/bd995beb-847a-46b5-89c8-e214466af922")
+def early_webpages_archive():
+    return fastapi.responses.FileResponse("Archives/easterArchive.zip", status_code=200)
+@app.get("/Archives/05a0b2d6-9ae9-46f0-b54d-81a73aebf48a")
+def important_archive():
+    return fastapi.responses.FileResponse("Archives/ImportantArchive.exe", status_code=200)
+
 
 @app.get("/easteregg")
 def easteregg():

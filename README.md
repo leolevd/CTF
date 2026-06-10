@@ -4,22 +4,30 @@ A deliberately vulnerable web application for learning and practicing security s
 
 ## Project Structure
 
-```
-CTF/
-├── The archive/
-│   ├── dontopenmepls.zip           # An archive with a password, contains easter.egg
-│   ├── easter.egg                  # Real easter egg from the archive quest
-│   └── easteregg.txt               # A fake egg file with a joke
-├── archive.zip                     # An archive with an easter egg
-├── server.py                       # FastAPI server with endpoints
-├── SQLManager.py                   # Database manager (vulnerable & safe functions)
-├── sqlWatcher.py                   # Database viewer utility
-├── randomGOODpasswordGeNeRaToR.py  # Cryptographic password generator
-├── data.db                         # SQLite database
-├── HTML/
-│   └── docs.html                   # API Documentation
-└── README.md                       # This file
-```
+• Archive_content/
+-- • EasterArchive/
+-- -- • dontopenmepls.zip
+-- -- • easter.egg
+-- -- • easteregg.txt
+-- • ImportantArchive
+-- -- • Greencode_greenifier_ALPHA.exe
+-- -- • Greencode_greenifier.cpp
+-- -- • license_transfer_agreement.md
+-- -- • partnering_agreement.md
+-- -- • technology_acquisition_agreement.md
+• Archives/
+-- • easterArchive.zip
+-- • ImportantArchive.exe
+• HTML/
+-- • Archive_home.html
+-- • docs.html
+• data.db
+• passwords.py
+• README.md
+• server.py
+• SQLManager.py
+• sqlWatcher.py
+
 
 ## Requirements
 
@@ -53,7 +61,7 @@ This application contains **deliberate vulnerabilities** for educational purpose
 ## Objective
 
 The goal is to escalate your privileges from an outsider to `top_admin` and retrieve the secret flag from `/topadmin/secret`.
-
+You can also consider finding the 2 easter eggs and the company's secres documents.
 
 ## Security Notice
 

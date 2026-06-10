@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Home</title>
+    <style>
+        body {
+            background: linear-gradient(180deg, #7ba6ff 0%, #4c82d1 38%, #274f9c 100%);
+            color: #1a2337;
+            font-family: Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 28px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #d7e5ff;
+            border: 2px solid #446fbf;
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+        }
+
+        .title-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, #3f74d6 0%, #2d5ab8 100%);
+            color: #ffffff;
+            padding: 11px 14px;
+            border-bottom: 1px solid #1e3a80;
+        }
+
+        .title-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-controls span {
+            width: 16px;
+            height: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ffffff;
+            background: #f2f2f2;
+            color: #000;
+            font-size: 12px;
+            line-height: 1;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .window-controls span.minimize {
+            background: #ffffc0;
+        }
+
+        .window-controls span.maximize {
+            background: #dfe8f4;
+        }
+
+        .window-controls span.close {
+            background: #ed6c6c;
+            color: #fff;
+            border-color: #c74646;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 0;
+            padding: 6px 14px;
+            background: #d4dcf4;
+            border-bottom: 1px solid #8d9ad1;
+            color: #000000;
+            font-size: 0.92rem;
+        }
+
+        .toolbar span {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            margin-right: 4px;
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: default;
+            user-select: none;
+        }
+
+        .toolbar span:hover,
+        .toolbar span:focus {
+            background: #eef3ff;
+            border-color: #9ba8dc;
+        }
+
+        .toolbar span:active {
+            background: #d1dbf1;
+            border-color: #7c88c8;
+        }
+
+        .content-pane {
+            padding: 22px 22px 26px;
+        }
+
+        p {
+            margin: 0 0 20px;
+            line-height: 1.65;
+            color: #182539;
+        }
+
+        .archive-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .archive-list li {
+            margin: 10px 0;
+            padding: 14px 16px;
+            background: #eef4ff;
+            border: 1px solid #8aa3e6;
+            box-shadow: inset 0 1px 0 #ffffff;
+        }
+
+        .archive-list li:hover {
+            background: #e1ebff;
+            border-color: #7992d8;
+        }
+
+        .archive-list a {
+            color: #14254e;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .archive-list a:hover {
+            text-decoration: underline;
+        }
+
+        .archive-list div {
+            margin-top: 6px;
+            color: #344776;
+            font-size: 0.94rem;
+        }
+
+        .note {
+            margin-top: 22px;
+            padding: 14px 16px;
+            background: #f3f7ff;
+            border: 1px solid #a6b9f6;
+            color: #1d2e56;
+            font-size: 0.94rem;
+            line-height: 1.62;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-bar">
+            <div class="title-text">Archive Home</div>
+            <div class="window-controls">
+                <span class="minimize">_</span>
+                <span class="maximize">▢</span>
+                <span class="close">X</span>
+            </div>
+        </div>
+        <div class="toolbar">
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Help</span>
+        </div>
+        <div class="content-pane">
+            <p>Welcome to the archive download page. Choose an archive below to download.</p>
+            <ul class="archive-list">
+            <li>
+                <a href="/Archives/05a0b2d6-9ae9-46f0-b54d-81a73aebf48a" download="ImportantArchive.exe"></a>
+                <div>Important documents,  software, and alpha-software versions. No longer available for download.</div>
+            </li>
+            <li>
+                <a href="/Archives/bd995beb-847a-46b5-89c8-e214466af922" download="webpagesArchive.zip">Early Webpages Archive</a>
+                <div>All pages deleted.</div>
+            </li>
+            <li>
+                <a href="#">Archive 2000s Collection</a>
+                <div>Not available right now but we are working on this.</div>
+            </li>
+            <li>
+                <a href="#">Classic Archive Pack</a>
+                <div>Not available right now but we are working on this.</div>
+            </li>
+        </ul>
+            <div class="note">
+                Note: Some archives may no longer be available for download due to various reasons. We are working on restoring access to them.
+            </div>
+    </div>
+</body>
+
+</html>
